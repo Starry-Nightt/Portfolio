@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes text-reveal {
+    0% {
+        left: 0;
+        width: 0;
+    }
+    50% {
+        left: 0;
+        width: 100%;
+    }
+    100% {
+        left: 100%;
+        width: 0;
+        right: 0;
+    }
+}
+
+@keyframes text-fade {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: white;
+    }
+}
+@keyframes text-fade-name {
+    0% {
+        color: transparent;
+    }
+    100% {
+        color: crimson;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#hero h1 span:nth-child(1){
+    animation-delay: 1.5s;
+}
+#hero h1 span:nth-child(2){
+    animation-delay: 2.5s;
+}
+#hero h1 span:nth-child(3){
+    animation-delay: 3.5s;
+}
+#hero h1 span:nth-child(1)::before{
+    animation-delay: 1s;
+}
+#hero h1 span:nth-child(2)::before{
+    animation-delay: 2s;
+}
+#hero h1 span:nth-child(3)::before{
+    animation-delay: 3s;
+}
+
+.reveal {
+    animation: text-fade 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.reveal::before {
+    animation: text-reveal 1s ease-out forwards;
+}
+.reveal-name::before {
+    animation: text-reveal 1s ease-out forwards;
+}
+.reveal-name {
+    animation: text-fade-name 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+#hero button {
+    animation: fade 1s ease-out forwards;
+    animation-delay: 4s;
+}
+
+@keyframes spread {
+    0% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+    80% {
+        opacity: 0;
+        width: 150%;
+        height: 150%;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hamburger::before {
+    animation: spread 1.2s ease-out infinite;
+}
+
+.hamburger.active .bar-child {
+    transform: translateY(0);
+}
+
+ .menu a::after {
+    transition: 0.3s letter-spacing;
+}
+
+.menu.active {
+    transform: translateX(0);
+}
+
+#header.stand {
+    background-color: rgb(41, 50,60);
+}
